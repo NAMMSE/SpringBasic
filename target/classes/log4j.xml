@@ -10,32 +10,41 @@
 		</layout>
 	</appender>
 	
+	<!-- 0803 -->  
+	<appender name="logfile" class="org.apache.log4j.FileAppender">
+		<param name="file" value="/log/logfile.txt" />
+			<layout class="org.apache.log4j.PatternLayout">
+				<param name="ConversionPattern" value="%-5p: %c - %m%n" /> <!-- p : 단계 / c : class / m : 메시지 --> 
+			</layout>
+	</appender>
+	
 	<!-- Application Loggers -->
 	<logger name="com.ezen.springmvc">
-		<level value="info" />
+		<level value="all" />
 	</logger>
 	
 	<!-- 3rdparty Loggers -->
-	<logger name="org.springframework.core">
-		<level value="info" />
+	<logger name="org.springframework.core"> <!-- value를 off부터 trace까지 등급별로 설정할 수 있다 -->
+		<level value="off" />
 	</logger>
 	
 	<logger name="org.springframework.beans">
-		<level value="info" />
+		<level value="off" />
 	</logger>
 	
 	<logger name="org.springframework.context">
-		<level value="info" />
+		<level value="off" />
 	</logger>
 
 	<logger name="org.springframework.web">
-		<level value="info" />
+		<level value="off" />
 	</logger>
 
 	<!-- Root Logger -->
 	<root>
 		<priority value="warn" />
 		<appender-ref ref="console" />
+		<appender-ref ref="logfile" /> <!-- appender 추가 후 여기에도 적어야 파일에 로그가 남는다 -->
 	</root>
 	
 </log4j:configuration>

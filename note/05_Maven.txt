@@ -1,0 +1,56 @@
+05_Maven.txt
+0803 수업
+
+# Maven
+
+ - 자바 프로젝트 관리 도구
+ - 프로젝트를 진행하면서 관리해야 하는 여러가지들을 자동으로 관리해준다
+ - 업데이트 할 때 마다 pom.xml에 적혀있는 대로 프로젝트를 변경한다
+ 
+# Project Object Model (POM)
+
+ - 프로젝트 객체 모델
+ - 해당 프로젝트에 대한 다양한 정보들을 담은 객체 모델
+ - pom.xml에 기록해 놓는다
+ 
+# pom.xml의 구조
+
+ <project>
+ 		<groupId> : 회사의 그룹 id
+ 		<artifactId> : 프로젝트 이름
+ 		<name> : 프로젝트 이름(보기좋은 이름)
+ 		<packaging> : 프로젝트 빌드 후 결과물의 형식 (war, jar, ...)
+ 		<version> : 프로젝트 버전
+ 		<properties>
+ 			pom.xml 내부에서 사용할 property를 정의할 수 있다
+ 			이곳에서 정의한 property들은 밑에서 ${property }로 불러서 사용할 수 있다
+ 			abcd 정의하면 ${abcd}로 사용가능
+ 		</properties>
+ 		<dependencies>
+ 			이 프로젝트를 구성하기 위해 필요한 다른 프로젝트들을 이곳에 등록할 수 있다
+ 			이곳에 등록한 <dependency>들은 메이븐이 자동으로 다운로드 후 관리한다.
+ 			해당 프로젝트의 <groupId>, <artifactId>, <version>을 적는다
+ 			<scope>를 설정하여 현재 프로젝트에서 어떤 범위까지 사용되는 의존성인지 설정할 수 있다.
+ 		</dependencies>
+ 		<build>
+ 			이 프로젝트를 빌드할 때 필요한 것들에 대한 설정
+ 		</build>
+ 
+ </project>
+ 
+ # <scope>
+ 
+  - 해당 <dependency>가 프로젝트에서 사용되는 범위를 설정
+  - compile : 컴파일 할 때 필요하고 실행 시에도 필요한 <dependency> (기본 값)
+  			  컴파일에도 사용되고, 프로젝트 배포(서버 컴퓨터에 옮기는 것)시에도 포함된다
+  - runtime : 컴파일 할 때는 필요없지만 실행 시 필요한 <dependency>
+     		  프로젝트 배포 시 포함된다
+  - provided : 컴파일 할 때는 필요하고 실행 시에는 필요 없는 <dependency> (jsp, lombok)
+  			   컴파일에는 사용되지만 배포에는 포함되지 않는다
+  - test : 테스트 코드 컴파일 및 실행 시 필요한 <dependency> (junit, spring-test)
+  		   배포에 포함되지 않는다
+  
+ # Maven의 원격 레포지토리와 로컬 레포지토리
+ 
+  - Maven은 <dependencies>에 등록된 모든 프로젝트들을 중앙 원격 레포지토리에서 다운받는다. (원격 레포지토리)
+  - 다운 받은 프로젝트들은 %USER_HOME%/.m2/repository 폴더에 보관한다. (로컬 레포지토리)

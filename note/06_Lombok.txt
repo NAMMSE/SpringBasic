@@ -1,0 +1,38 @@
+06_Lombok.txt
+0803 수업
+
+# Lombok
+
+https://projectlombok.org/download 다운 후 실행 - sts.exe있는 폴더까지 지정 - maven repo에서 같은버전 lombok 복사 - pom.xml 추가 - sts 재실행
+ 
+ - 간단한 어노테이션 추가로 자바빈 스타일의 데이터 클래스를 자동 완성해주는 라이브러리
+ 
+# Lombok의 어노테이션
+
+ @Data
+  - @Getter
+  - @Setter
+  - @ToString
+  - @EqualsAndHashCode
+  - @RequiredArgsConstructor
+  
+ @Getter
+  - 모든 필드에 대해 Getter를 생성
+  
+ @Setter 
+  - 모든 필드에 대해 Setter를 생성
+  
+ @ToString
+  - 해당 데이터 클래스의 toString을 생성
+  
+ @NoArgsConstructor
+  - 기본 생성자를 생성
+ 
+ @RequiredArgsConstructor
+  - @NonNull이 붙은 필드만 포함된 생성자를 생성
+  
+ @AllArgsConstructor
+  - 모든 필드를 포함한 생성자를 생성
+  
+ @EqualsAndHashCode
+  - 해당 클래스의 equals와 hashCode 메서드를 자동 생성

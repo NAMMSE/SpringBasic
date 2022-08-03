@@ -1,7 +1,10 @@
 package com.ezen.util;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+
+import java.util.ArrayList;
 
 import org.junit.After;
 import org.junit.Before;
@@ -56,17 +59,61 @@ public class CalculatorTest {
 	
 	@Test
 	public void randomEvenTest() {
-		int test = calc.randomEven();
 		for(int i=0;i<30;i++) {
+			int test = calc.randomEven();
 			assertTrue(test%2==0);
 		}
 	}
 	
 	@Test
 	public void checkPrimeTest() {
-		int test = (int)((Math.random()*100)+1);
-		System.out.println(test);
+		int test = (int)((Math.random()*28)+1);
+		System.out.println("test num : "+test);
 		assertTrue(calc.checkPrime(test));
+	}
+	
+	// 강사님 코드
+	@Test
+	public void getEvenTest1() {
+		int num = calc.getEven();
+		assertTrue(num%2==0);
+	}
+	
+	@Test
+	public void getEvenTest2() {
+		int num = calc.getEven();
+		assertFalse(num%2==1);
+	}
+	
+	@Test
+	public void getEvenTest3() {
+		ArrayList<Integer> evens = new ArrayList<>(); // JRE버전이 낮아서 arrayList가 없다 pom.xml에서 버전 올려주면 된다
+		
+		for(int i=0;i<20000;i++) {
+			evens.add(calc.getEven());
+		}
+		
+		assertFalse("evens에 0이 발견되었습니다",evens.contains(0));
+	}
+	
+	@Test
+	public void isPrimeTest1() {
+		assertTrue(calc.isPrime(13));
+	}
+	
+	@Test
+	public void isPrimeTest2() {
+		assertFalse(calc.isPrime(14));
+	}
+	
+	@Test
+	public void isPrimeTest3() {
+		assertFalse("1을 소수로 판별함",calc.isPrime(1));
+	}
+	
+	@Test
+	public void isPrimeTest4() {
+		assertFalse("-7을 소수로 판별함",calc.isPrime(-7));
 	}
 	
 }

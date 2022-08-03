@@ -22,11 +22,31 @@ public class Calculator {
 	
 	public boolean checkPrime(int num) {
 		for(int i=2;i<num;i++) {
+			if(num%i==0||num<=1) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	// 강사님 코드
+	// 짝수 생성
+	public int getEven() {
+		int num = (int)(Math.random()*10000);
+		return num % 2==0?num : num+1;
+	}
+	
+	// 소수 판별
+	
+	public boolean isPrime(int num) {
+		if(num < 2)
+			return false;
+		double sqrt = Math.sqrt(num);
+		for(int i = 2; i<=sqrt ; i++) {
 			if(num%i==0) {
 				return false;
 			}
 		}
 		return true;
 	}
-	
 }
