@@ -87,7 +87,7 @@ public class CalculatorTest {
 	
 	@Test
 	public void getEvenTest3() {
-		ArrayList<Integer> evens = new ArrayList<>(); // JRE버전이 낮아서 arrayList가 없다 pom.xml에서 버전 올려주면 된다
+		ArrayList<Integer> evens = new ArrayList<>(); // JRE버전이 낮아서 arrayList가 없다 pom.xml에서 버전 올려주면 된다 1.8로 올렸음
 		
 		for(int i=0;i<20000;i++) {
 			evens.add(calc.getEven());

@@ -3,8 +3,9 @@
 <Configuration status="DEBUG">
     <Appenders>
         <Console name="ConsoleAppender" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] [%C] %-5level %logger{36} - %msg%n" />
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%C] %-5level %logger{36} - %msg%n" />
         </Console>
+        <!-- 
         <File name="FileAppender" fileName="application-${date:yyyyMMdd}.log" immediateFlush="false" append="false">
             <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </File>
@@ -15,6 +16,18 @@
                 <Pattern>%d{yyyy-MM-dd HH:mm:ss} %5p [%c] %m%n</Pattern>
             </PatternLayout>
         </File>
+         -->
+        
+         <RollingFile name ="RollingFile">
+            <FileName>D:/log/log2.txt</FileName>
+            <PatternLayout>
+                <Pattern>%d{yyyy-MM-dd HH:mm:ss} %5p [%c] %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval = "1" modulate = "true"/>
+            </Policies>
+        </RollingFile>
+        
     </Appenders>
     
     <Loggers>
@@ -22,6 +35,7 @@
             <AppenderRef ref="ConsoleAppender" />
             <AppenderRef ref="FileAppender"/>
             <AppenderRef ref="log4j2File"/>
+            <AppenderRef ref="RollingFile"/>
         </Root>
     </Loggers>
 </Configuration>

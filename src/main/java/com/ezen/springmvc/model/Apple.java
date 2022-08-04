@@ -1,5 +1,7 @@
 package com.ezen.springmvc.model;
 
+import java.util.ArrayList;
+
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

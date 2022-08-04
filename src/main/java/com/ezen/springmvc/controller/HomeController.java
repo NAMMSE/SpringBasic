@@ -1,4 +1,4 @@
-package com.ezen.springmvc;
+package com.ezen.springmvc.controller;
 
 import java.text.DateFormat;
 import java.util.Date;

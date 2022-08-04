@@ -19,5 +19,10 @@
 	hot : ${coffee.hot }<br>
 </p>
 
+<!-- 0804 -->
+<p>
+	coffee info : ${name }, ${price }, ${hot }
+</p>
+
 </body>
 </html>
