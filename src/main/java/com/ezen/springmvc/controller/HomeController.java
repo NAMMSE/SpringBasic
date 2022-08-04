@@ -4,8 +4,6 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-// 여러 Logger가 있으므로 import 할 때 주의해야한다
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,6 +19,7 @@ import lombok.extern.log4j.Log4j2;
 // 0802 수업
 
 @Log4j2
+@Log4j
 @Controller
 public class HomeController {
 	

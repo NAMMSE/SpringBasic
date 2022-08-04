@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.ezen.springmvc.model.Coffee;
 
 import lombok.extern.log4j.Log4j2;
+
+
 //0804
 
 @RequestMapping(value= {"/hello", "/hi", "/welcome"})
@@ -24,7 +26,11 @@ public class HelloController {
 
 	@RequestMapping(value = {"/news"}, method = {RequestMethod.GET, RequestMethod.POST})
 	public String news() {
+		
+		
+		
 		log.info("뉴스 컨트롤러에는 잘 도착함");
+		
 		
 		// 다음으로 사용자에게 보여져야 할 view의 이름을 문자열로 리턴한다.
 		//return "news"; // servlet-context의 prefix부분이 news 앞에 붙고 suffix부분이 news 뒤에 붙는다
@@ -83,16 +89,16 @@ public class HelloController {
 	}
 	
 	@PostMapping("/coffee/add3") // 매개변수가 같으면
-	public String coffeeAdd3(String name,Integer price,Boolean hot) {
-//			@ModelAttribute("name") String name, 
-//			@ModelAttribute("price") Integer test,  // 모델어트리뷰트 어노테이션을 쓰면 굳이 이름을 안맞춰도 된다
-//			@ModelAttribute("hot") Boolean hot) {
+	public String coffeeAdd3(//String name,Integer price,Boolean hot) {
+			@ModelAttribute("name") String name, 
+			@ModelAttribute("price") Integer test,  // 모델어트리뷰트 어노테이션을 쓰면 굳이 이름을 안맞춰도 된다
+			@ModelAttribute("hot") Boolean hot) {
 		// 매개변수가 같으면 바인딩이 되는건 맞지만 어트리뷰트에 자동으로 추가가 되지는 않는다 / 추가하려면 @ModelAttribute를 사용해야한다
 			
 		log.info("coffee add3 ");
 			
 		log.info("name : "+ name);
-		log.info("price : "+ price);  //여기선 test로 해줘야 된다
+		log.info("price : "+ test);  //여기선 test로 해줘야 된다
 		log.info("hot : "+ hot);
 		
 		return "home";
