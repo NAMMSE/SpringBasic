@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 // 0802 수업
 
 @Component // 컴포넌트 어노테이션을 쓴 클래스에는 root-context에서 해당 클래스 내용을 수거해간다 컴포넌트 스캔을 통해 스프링 컨텍스트에 등록한다(src/spring/root-context.xml)
-		//에 context 추가 하여 해당 클래스가 있는 패키지를 등록한다 
+		   //에 context 추가 하여 해당 클래스가 있는 패키지를 등록한다 
 public class Coffee {
 	private String name;
 	private Integer price;

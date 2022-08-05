@@ -44,6 +44,7 @@ public class HelloController {
 	public String blog() {
 		
 		return "hello/blog";
+		
 	}
 	
 	@GetMapping("/coffee/add")

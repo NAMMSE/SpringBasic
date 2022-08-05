@@ -35,6 +35,15 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
+
+	<!-- 0805 spring test 추가 -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-test</artifactId>
+		<version>${org.springframework-version}</version>
+		<scope>test</scope> <!-- 테스트 할 용도의 디펜던시이기 때문에 scope가 test이다 -->
+	</dependency>
+		
 				
 		<!-- AspectJ -->
 		<dependency>
@@ -96,18 +105,38 @@
 			
 				
 		<!-- Servlet -->
+	<dependency> <!-- 0805 업데이트 한 서블렛 -->
+		<groupId>javax.servlet</groupId>
+		<artifactId>javax.servlet-api</artifactId>
+		<version>4.0.1</version>
+		<scope>provided</scope>
+	</dependency>
+		
+		<!-- 0805 서블렛 버전 업데이트 전
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
 			<version>2.5</version>
 			<scope>provided</scope>
 		</dependency>
+		 -->
+
+	<dependency> <!-- 0805 업데이트 한 jsp -->
+		<groupId>javax.servlet.jsp</groupId>
+		<artifactId>javax.servlet.jsp-api</artifactId>
+		<version>2.3.3</version>
+		<scope>provided</scope>
+	</dependency>
+
+		 <!-- 0805 jsp 버전 업데이트 전 
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>jsp-api</artifactId>
 			<version>2.1</version>
 			<scope>provided</scope>
 		</dependency>
+		 -->
+		 
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>

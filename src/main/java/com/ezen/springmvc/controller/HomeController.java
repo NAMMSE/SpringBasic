@@ -58,7 +58,7 @@ public class HomeController {
 		String formattedDate = dateFormat.format(date);
 		
 		model.addAttribute("serverTime", formattedDate );
-		model.addAttribute("coffee", coffee );
+		model.addAttribute("coffee", coffee );// model에 어트리뷰트로 실어줄수도 있다.
 		
 		return "home"; // /로 접속을 했을때 home.jsp로 가라는 뜻
 	}

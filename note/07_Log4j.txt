@@ -20,3 +20,8 @@
  - DEBUG : 디버깅 단계에서 보여질 로그
  - TRACE : 버그 추적 단계에서 보여질 상세 로그
  - ALL   : 모든 로그를 켬
+ 
+# Log4j2
+
+ - maven repo에 없다. 구글에 log4j2 검색후 메이븐에서 pom용 디펜던시 복사 후 붙여넣기
+ - src/main/resources에 log4j2.xml 만들고 설정값 적어준다

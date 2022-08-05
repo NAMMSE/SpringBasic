@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 0803 -->
-<Configuration status="DEBUG">
+<Configuration status="INFO">
     <Appenders>
-        <Console name="ConsoleAppender" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%C] %-5level %logger{36} - %msg%n" />
+        <Console name="ConsoleAppender" target="SYSTEM_OUT"><!-- [%C] %-5level %logger{36} - %msg -->
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} - %msg%n" /> <!-- 0805 로그 너무 길어서 저거 주석처리함 -->
         </Console>
         <!-- 
         <File name="FileAppender" fileName="application-${date:yyyyMMdd}.log" immediateFlush="false" append="false">
@@ -31,7 +31,7 @@
     </Appenders>
     
     <Loggers>
-        <Root level="DEBUG">
+        <Root level="INFO">
             <AppenderRef ref="ConsoleAppender" />
             <AppenderRef ref="FileAppender"/>
             <AppenderRef ref="log4j2File"/>
