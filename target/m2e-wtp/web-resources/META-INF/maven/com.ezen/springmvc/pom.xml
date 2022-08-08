@@ -150,6 +150,13 @@
 		<version>4.13.2</version>
 		<scope>test</scope>
 	</dependency>
+
+	<dependency> <!-- http로 파일을 보낼때 필요한 디펜던시 사용하려면 bean으로써 등록을하면 스프링이 수거해간다 -->
+		<groupId>commons-fileupload</groupId>
+		<artifactId>commons-fileupload</artifactId>
+		<version>1.4</version>
+	</dependency>
+	
 	       
 	</dependencies>
     <build>

@@ -2,11 +2,13 @@ package com.ezen.springmvc.controller;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.multipart;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
@@ -55,6 +57,16 @@ public class ControllerTest {
 			fail();
 			
 		}
+	}
+	
+	@Test
+	public void shouldSaveUploadFile() throws Exception {
+		MockMultipartFile multipartFile = new MockMultipartFile("file", "test2.txt", "text/plain", "My File Upload Test...".getBytes());
+		
+		// 전역변수로 선언한 가짜 mvc
+		// 파일 생성되는 경로 D:\javaAWS(psh)\spring-workspace\SpringMVC\target\files 파일 업로드 컨트롤러에서 저장하는 위치랑 다르다
+		mockMvc.perform(multipart("/fileupload/").file(multipartFile));
+		
 	}
 	
 }
